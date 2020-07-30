@@ -1,0 +1,109 @@
+{
+  "anuncios": [ 
+    {
+      "nombre": "Bicicleta",
+      "venta": true,
+      "precio": 230.15,
+      "foto": "bici.jpg",
+      "tags": [ "lifestyle", "motor"]
+    }, 
+    {
+      "nombre": "Ordenador",
+      "venta": true,
+      "precio": 449.99,
+      "foto": "ordenador.jpg",
+      "tags": [ "lifestyle", "work"]
+    },
+    {
+      "nombre": "Moto",
+      "venta": false,
+      "precio": 600,
+      "foto": "moto.jpg",
+      "tags": [ "lifestyle", "motor"]
+    },
+    {
+      "nombre": "Libros",
+      "venta": true,
+      "precio": 90.50,
+      "foto": "bici.jpg",
+      "tags": [ "lifestyle", "work"]
+    },
+    {
+      "nombre": "Movil1",
+      "venta": false,
+      "precio": 520,
+      "foto": "movil1.jpg",
+      "tags": [ "lifestyle", "mobile", "work"]
+    },
+    {
+      "nombre": "GPS",
+      "venta": false,
+      "precio": 65.30,
+      "foto": "gps.jpg",
+      "tags": [ "lifestyle", "motor", "mobile"]
+    },
+    {
+      "nombre": "Movil2",
+      "venta": true,
+      "precio": 350.65,
+      "foto": "movil2.jpg",
+      "tags": [ "lifestyle", "mobile", "work"]
+    },
+    {
+      "nombre": "Impresora",
+      "venta": true,
+      "precio": 170,
+      "foto": "impresora.jpg",
+      "tags": [ "lifestyle"]
+    },
+    {
+      "nombre": "Tablet",
+      "venta": true,
+      "precio": 280.40,
+      "foto": "tablet.jpg",
+      "tags": ["work", "mobile"]
+    },
+    {
+      "nombre": "Television",
+      "venta": true,
+      "precio": 699.99,
+      "foto": "television.jpg",
+      "tags": [ "lifestyle", "work"]
+    },
+    {
+      "nombre": "Smartwatch",
+      "venta": false,
+      "precio": 110,
+      "foto": "smartwatch.jpg",
+      "tags": [ "lifestyle", "work", "mobile"]
+    },
+    {
+      "nombre": "Patinete",
+      "venta": true,
+      "precio": 310.75,
+      "foto": "patinete.jpg",
+      "tags": [ "lifestyle", "motor"]
+    },
+    {
+      "nombre": "Altavoces",
+      "venta": false,
+      "precio": 120.50,
+      "foto": "altavoces.jpg",
+      "tags": [ "lifestyle", "work"]
+    },
+    {
+      "nombre": "Ropa",
+      "venta": true,
+      "precio": 55,
+      "foto": "ropa.jpg",
+      "tags": [ "lifestyle"]
+    },
+    {
+      "nombre": "Coche",
+      "venta": true,
+      "precio": 3500,
+      "foto": "coche.jpg",
+      "tags": [ "lifestyle", "motor", "work"]
+    }
+  ]
+}

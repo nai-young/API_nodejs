@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Nodepop 👋</h1>
+<h1 align="center">Welcome to my API - Nodepop 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/NaiYoung4" target="_blank">
@@ -20,7 +20,13 @@ npm install
 npm start
 ```
 
-# Development Start
+## Database Start
+
+```sh
+npm run installBD
+```
+
+## Development Start
 
 ```sh
 npm run dev
