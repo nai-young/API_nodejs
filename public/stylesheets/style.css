@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +10,14 @@ body {
 
 a {
   color: #00B7FF;
+}
+.anuncio-cont {
+  width: 900px;
+  flex-wrap: wrap;
+  display: inline-flex;
+}
+.anuncio-cont > .anuncio-item{
+  border: 1px solid #000;
+  margin: 1rem;
+  width: 200px;
 }

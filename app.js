@@ -1,4 +1,5 @@
 require('./mongooseConnection')
+require('./routes/apiv1')
 require('./install_db')
 var createError = require('http-errors')
 var express = require('express')

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nodepop</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Nodepop</h1>
+    <div class="anuncio-cont">
+      <% for (let i in anuncios) { %>
+        <div class="anuncio-item">
+          <p><%= anuncios[i].nombre %></p>
+          <p><%= anuncios[i].foto %></p>
+          <p><%= anuncios[i].venta %></p>
+          <p><%= anuncios[i].precio %></p>
+          <p><%= anuncios[i].tags %></p>
+        </div>
+      <% } %>
+      </div>
+  </body>
+</html>
