@@ -1,3 +1,4 @@
+
 /* const mongoClient = require('mongodb').MongoClient
 mongoClient.connect('mongodb://localhost:27017/Nodepop', function (err, db) {
   if (err) {
@@ -19,14 +20,21 @@ const fs = require('fs')
 const anuncios = JSON.parse(fs.readFileSync('anuncios.json', 'utf-8'))
 
 // Cargamos el módulo de conexión de Mongoose
-// const conn = require('./mongooseConnection')
+require('./mongooseConnection')
+
+// Cargamos el esquema
 
 // Cargamos los modelos
-// eslint-disable-next-line import/first
-const Anuncio = require('./mongooseConnection').Anuncio
+const Anuncio = require('./models/anuncio')
 
-const moto = new Anuncio()
-moto.nombre = anuncios.nombre
+var moto = new Anuncio({ nombre: 'moto' })
+moto.save(function (err) {
+  if (err) return console.log(err)
+  console.log(moto.nombre)
+})
+// const moto = new Anuncio()
+// moto.nombre = anuncios.nombre
+
 /* const bicicleta = new Anuncio({ nombre: 'Bicicleta', venta: true, precio: 100 })
 bicicleta.save() // Guarda en la base de datos
 console.log(bicicleta) */
@@ -37,7 +45,6 @@ conn.once('open', function () {
   console.info('Connected to MongoDB.')
 }) */
 
-console.log('Mis anuncios: ', Anuncio)
 /* Anuncio.collection.insertMany(anuncios, function (err, r) {
   if (err) {
     return console.error(err)

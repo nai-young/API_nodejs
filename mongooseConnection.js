@@ -1,31 +1,22 @@
 require('./install_db')
 const mongoose = require('mongoose')
 // const conn = mongoose.createConnection()
-const Schema = mongoose.Schema
+
 // Conexión a Mongoose
-const conn = mongoose.connect('mongodb://localhost')
+mongoose.connect('mongodb://localhost')
 
 // MongoDB
 // const client = require('mongodb').MongoClient
 // client.connect('mongodb://localhost:27017/Nodepop')
 
-// Lo almacenamos en conn para verificar la conexión
-// const conn = mongoose.connection
-conn.on('error', console.error.bind(console, 'MongoDB Connection Error: '))
-conn.once('open', function () {
+// Verificamos la conexión
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB Connection Error: '))
+mongoose.connection.once('open', function () {
   console.info('Connected to database!')
 })
-// Creamos el esquema
-var AnuncioSchema = new Schema({
-  nombre: String,
-  venta: Boolean,
-  precio: Number,
-  foto: String,
-  tags: [String]
+mongoose.connection.on('disconnected', () => {
+  console.log('Database disconnected.')
 })
-
-// Creamos el modelo
-const Anuncio = mongoose.model('Anuncio', AnuncioSchema)
 
 // Guardar un anuncio
 /* const bicicleta = new Anuncio({ nombre: 'Bicicleta' })
@@ -43,6 +34,3 @@ bicicleta.save(function (err, anuncioCreado) {
     if (err) throw err
     // console.log('Anuncio Encontrado: ', anuncio)
   }) */
-
-exports.Anuncio = Anuncio
-module.exports = conn
