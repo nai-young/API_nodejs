@@ -14,6 +14,8 @@ mongoClient.connect('mongodb://localhost:27017/Nodepop', function (err, db) {
     db.close() // Cerramos la conexión
   })
 }) */
+var assert = require('assert')
+
 
 // Cargamos el JSON de los anuncios
 const fs = require('fs')
@@ -24,16 +26,35 @@ require('./mongooseConnection')
 
 // Cargamos el esquema
 
-// Cargamos los modelos
+// Cargamos los modelos de anuncios
 const Anuncio = require('./models/anuncio')
 
-var moto = new Anuncio({ nombre: 'moto' })
-moto.save(function (err) {
+// Creamos los anuncios
+const anunciosArray = []
+// Guardamos los anuncios del .json en un array para
+// hacer los modelos e insertarlos en la db
+for (let i in anuncios) {
+  for (let j in anuncios[i]) {
+    anunciosArray.push({
+      nombre: anuncios[i][j]
+    })
+  }
+}
+console.log(anunciosArray)
+// Insertamos los anuncios en la base de datos de MongoDB
+Anuncio.collection.insertMany(anunciosArray)
+  .then(result => {
+    console.log(`Articulo: ${result.insertedCount}, insertado correctamente.`)
+    return result
+  })
+  .catch(err => console.error(`Error al insertar: ${err}`))
+
+/* var anuncio = new Anuncio({ nombre: JSON.stringify(anuncios.nombre) })
+anuncio.save(function (err) { // le pasamos un callback cuando acabe de guardarlo
   if (err) return console.log(err)
-  console.log(moto.nombre)
-})
-// const moto = new Anuncio()
-// moto.nombre = anuncios.nombre
+  console.log(`Anuncio de ${anuncio.nombre} creado!`)
+  console.log(anuncio.nombre)
+}) */
 
 /* const bicicleta = new Anuncio({ nombre: 'Bicicleta', venta: true, precio: 100 })
 bicicleta.save() // Guarda en la base de datos

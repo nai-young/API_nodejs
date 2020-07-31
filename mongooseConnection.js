@@ -3,11 +3,18 @@ const mongoose = require('mongoose')
 // const conn = mongoose.createConnection()
 
 // Conexión a Mongoose
-mongoose.connect('mongodb://localhost')
+mongoose.connect('mongodb://localhost/Nodepop', function (err) {
+  if (err) throw err
+  console.log('Conexión a MongoDB con éxito')
+})
 
-// MongoDB
-// const client = require('mongodb').MongoClient
-// client.connect('mongodb://localhost:27017/Nodepop')
+var mydb
+// Conexión a MongoDB
+const client = require('mongodb').MongoClient
+client.connect('mongodb://localhost:27017/Nodepop', function (err, db) {
+  if (err) throw err
+  mydb = db.db('Nodepop')
+})
 
 // Verificamos la conexión
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB Connection Error: '))
@@ -34,3 +41,5 @@ bicicleta.save(function (err, anuncioCreado) {
     if (err) throw err
     // console.log('Anuncio Encontrado: ', anuncio)
   }) */
+
+exports.mydb = mydb
