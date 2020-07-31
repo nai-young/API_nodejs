@@ -7,7 +7,7 @@ const Schema = mongoose.Schema
 // Creamos el esquema
 const AnuncioSchema = new Schema({
   nombre: String,
-  venta: Boolean,
+  // venta: Boolean,
   precio: Number,
   foto: String,
   tags: [String]
