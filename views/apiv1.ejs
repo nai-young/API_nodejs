@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nodepop</title>
+    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Nodepop</h1>
+    <h1><%= title %></h1>
+    <h2>Crea un anuncio:</h2>
+    <form action="" method="POST">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre">
+      <label for="foto">Foto</label>
+      <input type="text" id="foto" name="foto"> 
+      <label for="venta">Venta</label>
+      <input type="text" id="venta" name="venta">
+      <label for="precio">Precio</label>
+      <input type="text" id="precio" name="precio">
+      <label for="tags">Tags (separados por coma)</label>
+      <input type="text" id="tags" name="tags">
+      <button type="submit" name="addAnuncio" value="addAnuncio">Crear Anuncio</button>
+    </form>
+    <form action="" method="GET">
+      <h2>Filtros:</h2>
+      <p>Buscar por nombre</p>
+      <input type="text" id="nombre" name="nombre">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <p>Buscar por tag</p>
+    <a href="#">Work</a>
+    <a href="#">Motor</a>
+    <a href="#">Lifestyle</a>
+    <a href="#">Mobile</a>
+
+    <form action="" method="GET">
+      <p>Buscar por tipo</p>
+      <button type="submit" name="venta" value="true">Se vende</button> 
+      <button type="submit" name="venta" value="false">Se busca</button> 
+    </form>
+
+    <p>Buscar por precio</p>
+    <a href="#">Más de 10</a>
+    <a href="#">Entre 10 y 50</a>
+    <a href="#">Menos de 50</a>
+    <a href="#">Igual a 50</a>
+
+    <h2>Anuncios: </h2>
     <div class="anuncio-cont">
       <% for (let i in anuncios) { %>
         <div class="anuncio-item">
